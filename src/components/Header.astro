@@ -1,0 +1,31 @@
+---
+const menus = [
+	{name: "Parfume", url: "#parfume"},
+	{name: "Brands", url: "#brands"},
+	{name: "Shop", url: "#shop"},
+	{name: "Contact", url: "#contact"},
+]
+---
+<header class="py-4">
+	<div class="container lg:flex lg:justify-between">
+		<div class="flex justify-between">
+			<a class="text-xl font-semibold" href="/">Parfume</a>
+			<button id="toggle_menu" class="lg:hidden" type="button">menu</button>
+		</div>
+		<nav id="nav_menu" class="py-8 hidden lg:block lg:py-0">
+			<ul class="flex flex-col gap-2 lg:flex-row lg:gap-8">
+			{menus?.map(m =>
+				<li><a href={m.url}>{m.name}</a></li>
+			)}
+			</ul>
+		</nav>
+	</div>
+</header>
+
+<script>
+	const toggle = document.getElementById("toggle_menu");
+	
+	toggle.addEventListener("click",()=>{
+		document.getElementById("nav_menu").classList.toggle('hidden');
+	})
+</script>
