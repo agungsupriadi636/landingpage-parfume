@@ -1,0 +1,48 @@
+---
+import { getImage, Image } from "astro:assets";
+import hero_1 from "../../images/img-4.jpg";
+import hero_2 from "../../images/img-3.jpg";
+
+import people_1 from "../../images/people-1.jpg";
+import people_2 from "../../images/people-2.jpg";
+---
+<section class="py-6">
+	<div class="container | grid md:grid-rows-2 md:grid-flow-col">
+		<div class="bg-red-500 | md:col-span-4 | flex flex-col md:flex-row-reverse gap-4">
+			<div class="md:basis-3/4 | text-center space-y-6">
+				<h1 class="flex flex-col | text-3xl font-semibold lg:text-6xl">
+					<span>Best Parfume</span>
+					<span>Collection For You</span>
+				</h1>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+				<a href="/" class="inline-block px-5 py-2 bg-black text-white rounded-full">Buy Now</a>
+			</div>
+			<div class="md:basis-1/4 | flex gap-1">
+				<div class="flex">
+					<Image class="size-8 rounded-full object-cover" src={people_2} alt="people" />
+					<Image class="relative right-3 | size-8 rounded-full object-cover" src={people_1} alt="people" />
+				</div>
+				<p class="text-xs">Happy <br /> Costumer</p>
+			</div>
+		</div>
+		<div class="bg-blue-500 | md:col-span-4 order-last md-order-2 | flex flex-col md:flex-row">
+			<div class="md:basis-1/4">
+				<Image class="w-[200px] h-[350px] | object-cover rounded-full" src={hero_2} alt="hero" />
+			</div>
+			<div class="md:basis-3/4 | text-center">
+				<h2>Lorem ipsum dolor.</h2>
+				<p class="w-[200px] mx-auto">Lorem ipsum dolor sit amet, consectetur adipisicing.</p>
+				<a href="/">down</a>
+			</div>
+		</div>
+		<div class="md:row-span-2 md:col-span-1 | order-2 md:order-last">
+			<div class="w-full | flex flex-col">
+				<div class="flex flex-col items-center">
+					<div class="size-[120px] border rounded-full text-center flex justify-center items-center text-sm | relative top-12 | bg-white">Our Unique Product 100% Organic</div>
+					<Image class="w-[200px] h-[350px] | object-cover rounded-full" src={hero_1} alt="hero" />
+				</div>
+				<a href="/" class="inline-block">Learn More</a>
+			</div>
+		</div>
+	</div>
+</section>
